@@ -373,7 +373,7 @@ header {
 
 .page-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  grid-template-columns: minmax(1, 1.25fr) minmax(320px, 0.75fr);
   gap: 1.6rem;
   align-items: stretch;
 }
