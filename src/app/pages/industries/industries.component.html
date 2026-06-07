@@ -1,103 +1,183 @@
 <main class="page-shell">
-  <section class="page-hero">
-    <div class="site-container page-hero-grid">
+  <section class="industries-hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-ring hero-ring-a"></div>
+    <div class="hero-ring hero-ring-b"></div>
+
+    <div class="site-container industries-hero-grid">
       <div class="page-hero-copy">
         <span class="eyebrow">Industries</span>
-        <h1 class="display-title">Private wireless built for sectors where response time and uptime shape outcomes.</h1>
+        <h1 class="display-title hero-title">
+          <span>Private 5G For</span>
+          <span class="accent-line">Industries That Move</span>
+          <span>In Real Time</span>
+        </h1>
         <p class="hero-subline">
-          The industries page translates the reference aesthetic into a clearer service story, pairing bold section headers with practical sector-specific value propositions.
+          Norwaves shapes Private 5G, Edge Cloud, AI, and integration programs
+          around the way each operating environment actually works, from
+          emergency response and clinical mobility to smart factories, ocean
+          farms, and live media venues.
+        </p>
+
+        <div class="hero-pillars">
+          <span class="hero-pillar">Private 5G</span>
+          <span class="hero-pillar">Edge Cloud</span>
+          <span class="hero-pillar">AI</span>
+          <span class="hero-pillar">System Integration</span>
+        </div>
+      </div>
+
+      <div class="industry-orbit" aria-hidden="true">
+        <div class="orbit-core">
+          <span>Norwaves</span>
+          <strong>5G</strong>
+        </div>
+        <span class="orbit-node node-public">Public Safety</span>
+        <span class="orbit-node node-health">Healthcare</span>
+        <span class="orbit-node node-manufacturing">Manufacturing</span>
+        <span class="orbit-node node-aqua">Aquaculture</span>
+        <span class="orbit-node node-media">Media</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-strip marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">Mission-critical resilience</span>
+      <span class="marquee-item">Clinical-grade mobility</span>
+      <span class="marquee-item">Automation-ready factories</span>
+      <span class="marquee-item">Connected aquaculture</span>
+      <span class="marquee-item">Immersive live media</span>
+      <span class="marquee-item">Mission-critical resilience</span>
+      <span class="marquee-item">Clinical-grade mobility</span>
+      <span class="marquee-item">Automation-ready factories</span>
+      <span class="marquee-item">Connected aquaculture</span>
+      <span class="marquee-item">Immersive live media</span>
+    </div>
+  </section>
+
+  <section class="section industries-flow-section">
+    <div class="site-container">
+      <div class="section-header industries-flow-header">
+        <span class="eyebrow">Industry Use Cases</span>
+        <h2>Solutions shaped around real operating environments.</h2>
+        <p>
+          Instead of forcing every sector into the same package, we map the
+          operational pressure points, data flows, and uptime needs behind each
+          site, then build the network around that reality.
         </p>
       </div>
-      <aside class="hero-side panel">
-        <div class="metric-stack">
-          <div class="metric-item">
-            <span class="metric-value">Ports</span>
-            <span class="metric-label">Asset flow, automation, safety</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-value">Utilities</span>
-            <span class="metric-label">Coverage across distributed sites</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-value">Factories</span>
-            <span class="metric-label">Deterministic and scalable connectivity</span>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="site-container grid-2">
-      <article class="panel info-card">
-        <span class="card-kicker">Ports & Maritime</span>
-        <h2 class="card-title">Keep yards, terminals, and vessel operations connected.</h2>
-        <p class="card-copy">Support autonomous equipment, workforce mobility, incident coordination, and operational telemetry with stronger control than public connectivity can offer.</p>
-        <div class="chip-row">
-          <span class="chip">Coverage continuity</span>
-          <span class="chip">Asset visibility</span>
-          <span class="chip">OT integration</span>
-        </div>
-      </article>
-      <article class="panel info-card">
-        <span class="card-kicker">Healthcare</span>
-        <h2 class="card-title">Enable secure mobility for clinical and campus operations.</h2>
-        <p class="card-copy">Deliver dependable coverage for connected medical devices, staff communications, telemetry, and high-availability digital workflows across complex estates.</p>
-        <div class="chip-row">
-          <span class="chip">Clinical resilience</span>
-          <span class="chip">Secure mobility</span>
-          <span class="chip">Campus-wide access</span>
-        </div>
-      </article>
-      <article class="panel info-card">
-        <span class="card-kicker">Energy & Utilities</span>
-        <h2 class="card-title">Modernize field and site connectivity without compromising control.</h2>
-        <p class="card-copy">Private networks can support remote operations, substations, condition monitoring, and workforce coordination across dispersed infrastructure.</p>
-        <div class="chip-row">
-          <span class="chip">Field coverage</span>
-          <span class="chip">Critical telemetry</span>
-          <span class="chip">Operational control</span>
-        </div>
-      </article>
-      <article class="panel info-card">
-        <span class="card-kicker">Advanced Manufacturing</span>
-        <h2 class="card-title">Support robotics, analytics, and machine-heavy digital production.</h2>
-        <p class="card-copy">Create the wireless layer needed for flexible production lines, connected assets, computer vision, and data-rich continuous improvement programs.</p>
-        <div class="chip-row">
-          <span class="chip">Low latency</span>
-          <span class="chip">High density</span>
-          <span class="chip">Scalable automation</span>
-        </div>
-      </article>
-    </div>
-  </section>
+      <div class="industry-flow">
+        <article
+          class="industry-stream"
+          *ngFor="let industry of industryHighlights; let i = index"
+          [class.stream-even]="i % 2 === 1">
+          <div class="stream-marker">
+            <span>{{ (i + 1).toString().padStart(2, '0') }}</span>
+          </div>
 
-  <section class="section">
-    <div class="site-container panel info-card">
-      <div class="section-header">
-        <span class="eyebrow">Delivery Flow</span>
-        <h2>From industry need to operating network.</h2>
+          <div class="stream-copy">
+            <span class="card-kicker">{{ industry.eyebrow }}</span>
+            <h3>{{ industry.title }}</h3>
+            <p>{{ industry.description }}</p>
+            <div class="stream-outcomes">
+              <span *ngFor="let outcome of industry.outcomes">{{ outcome }}</span>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="grid-4">
-        <div class="panel-soft info-card">
-          <span class="card-kicker">01</span>
-          <h3 class="card-title">Discover</h3>
-          <p class="card-copy">Map workflows, risk points, site conditions, and performance needs.</p>
+    </div>
+  </section>
+
+  <section class="section process-section">
+    <div class="site-container process-layout">
+      <div class="section-header process-copy">
+        <span class="eyebrow">How We Do It</span>
+        <h2>From site reality to operating network.</h2>
+        <p>
+          The process is deliberately practical: understand the environment,
+          guide the technical direction, protect the infrastructure, and secure
+          the network so the system can keep improving after launch.
+        </p>
+      </div>
+
+      <div class="process-arc">
+        <article class="process-point" *ngFor="let item of workingProcess">
+          <span class="process-step">{{ item.step }}</span>
+          <h3>{{ item.title }}</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section integration-section">
+    <div class="site-container integration-layout">
+      <div class="integration-signal" aria-hidden="true">
+        <span class="signal-wave wave-one"></span>
+        <span class="signal-wave wave-two"></span>
+        <span class="signal-wave wave-three"></span>
+        <div class="signal-core">E2E</div>
+      </div>
+
+      <div class="integration-copy">
+        <span class="eyebrow">Core Solution</span>
+        <h2>System integration without the handoff gaps.</h2>
+        <p>
+          We deliver end-to-end system integration for Private 5G, Edge Cloud,
+          AI, and Wi-Fi solutions, ensuring every component works together from
+          concept to commissioning.
+        </p>
+
+        <ul class="integration-list">
+          <li *ngFor="let capability of integrationCapabilities">{{ capability }}</li>
+        </ul>
+      </div>
+
+      <div class="service-ribbon">
+        <span class="card-kicker">Private 5G as a Service</span>
+        <h3>A fully managed path to next-gen connectivity.</h3>
+        <p>
+          Norwaves designs, funds, builds, and operates a dedicated Private 5G
+          network at your premises so your team can focus on core operations.
+        </p>
+        <div class="stream-outcomes">
+          <span>Monthly Service Model</span>
+          <span>Maximum Uptime</span>
+          <span>Future-Ready Scalability</span>
         </div>
-        <div class="panel-soft info-card">
-          <span class="card-kicker">02</span>
-          <h3 class="card-title">Architect</h3>
-          <p class="card-copy">Design radio, core, edge, and operational support around the use case.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section consultancy-section">
+    <div class="site-container consultancy-layout">
+      <div class="section-header">
+        <span class="eyebrow">Consultancy Services</span>
+        <h2>Strategy, expertise, and execution for complex network journeys.</h2>
+        <p>
+          From adoption planning to scalable rollout, our consulting team helps
+          transform complex challenges into practical, high-impact solutions.
+        </p>
+      </div>
+
+      <div class="consultancy-map">
+        <div class="consultancy-radar" aria-hidden="true">
+          <span class="radar-ring radar-ring-one"></span>
+          <span class="radar-ring radar-ring-two"></span>
+          <span class="radar-sweep"></span>
+          <div class="consultancy-radar-core">
+            <span>Advisory</span>
+            <strong>5G</strong>
+          </div>
         </div>
-        <div class="panel-soft info-card">
-          <span class="card-kicker">03</span>
-          <h3 class="card-title">Deploy</h3>
-          <p class="card-copy">Install and validate with phased activation and stakeholder sign-off.</p>
-        </div>
-        <div class="panel-soft info-card">
-          <span class="card-kicker">04</span>
-          <h3 class="card-title">Optimize</h3>
-          <p class="card-copy">Monitor performance, expand coverage, and adapt the roadmap over time.</p>
+
+        <div class="consultancy-lanes">
+          <article class="consultancy-lane" *ngFor="let point of consultancyPoints; let i = index">
+            <span>{{ (i + 1).toString().padStart(2, '0') }}</span>
+            <h3>{{ point }}</h3>
+          </article>
         </div>
       </div>
     </div>

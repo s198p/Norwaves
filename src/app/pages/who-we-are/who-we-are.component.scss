@@ -1,3 +1,662 @@
 :host {
   display: block;
 }
+
+.who-hero {
+  position: relative;
+  min-height: calc(100vh - 92px);
+  padding: 4rem 0 3rem;
+  overflow: hidden;
+}
+
+.who-hero-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 3rem;
+  align-items: center;
+  min-height: calc(100vh - 92px);
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
+.accent-line {
+  background: linear-gradient(120deg, #2f80ff 0%, #00d1ff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+
+.hero-pillar {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(97, 165, 255, 0.24);
+  border-radius: 10px;
+  color: #edf3ff;
+  background: rgba(47, 128, 255, 0.08);
+  font-weight: 700;
+}
+
+.hero-identity {
+  position: relative;
+  min-height: 34rem;
+  isolation: isolate;
+}
+
+.identity-scene {
+  position: absolute;
+  inset: 1rem 0 5.5rem;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+  animation: scene-float 6s ease-in-out infinite;
+}
+
+.scene-floor {
+  position: absolute;
+  left: 50%;
+  bottom: 4.5rem;
+  width: 21rem;
+  height: 21rem;
+  border-radius: 2.2rem;
+  background:
+    radial-gradient(circle at center, rgba(0, 209, 255, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(18, 37, 68, 0.78), rgba(6, 14, 27, 0.96));
+  border: 1px solid rgba(97, 165, 255, 0.18);
+  box-shadow:
+    0 34px 80px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(0, 209, 255, 0.08);
+  transform: translateX(-50%) rotateX(70deg) rotateZ(45deg);
+}
+
+.scene-module {
+  position: absolute;
+  width: 10.2rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(97, 165, 255, 0.2);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(22, 43, 77, 0.96), rgba(7, 16, 31, 0.98));
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.scene-module strong,
+.scene-module small {
+  display: block;
+}
+
+.scene-module strong {
+  margin-top: 0.35rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.scene-module small {
+  margin-top: 0.4rem;
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.module-core {
+  left: 50%;
+  top: 30%;
+  width: 13rem;
+  text-align: center;
+  transform: translateX(-50%) translateY(0) rotateX(14deg);
+  animation: module-core-float 4.5s ease-in-out infinite;
+}
+
+.module-connect {
+  left: 0;
+  top: 10%;
+  transform: rotateY(18deg) rotateX(10deg);
+  animation: module-left-top 5s ease-in-out infinite;
+}
+
+.module-cloud {
+  right: 0;
+  top: 16%;
+  transform: rotateY(-18deg) rotateX(10deg);
+  animation: module-right-top 5.4s ease-in-out infinite;
+}
+
+.module-ai {
+  left: 6%;
+  bottom: 21%;
+  transform: rotateY(14deg) rotateX(10deg);
+  animation: module-left-bottom 5.2s ease-in-out infinite;
+}
+
+.module-integration {
+  right: 6%;
+  bottom: 15%;
+  transform: rotateY(-14deg) rotateX(10deg);
+  animation: module-right-bottom 5.6s ease-in-out infinite;
+}
+
+.identity-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 28rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.identity-caption p {
+  margin: 0.8rem 0 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+@keyframes aura-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes scene-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes module-core-float {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotateX(14deg);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-16px) rotateX(14deg);
+  }
+}
+
+@keyframes module-left-top {
+  0%,
+  100% {
+    transform: rotateY(18deg) rotateX(10deg) translateY(0);
+  }
+
+  50% {
+    transform: rotateY(18deg) rotateX(10deg) translateY(-14px);
+  }
+}
+
+@keyframes module-left-bottom {
+  0%,
+  100% {
+    transform: rotateY(12deg) rotateX(8deg) translateY(0);
+  }
+
+  50% {
+    transform: rotateY(14deg) rotateX(10deg) translateY(-12px);
+  }
+}
+
+@keyframes module-right-top {
+  0%,
+  100% {
+    transform: rotateY(-18deg) rotateX(10deg) translateY(0);
+  }
+
+  50% {
+    transform: rotateY(-18deg) rotateX(10deg) translateY(-14px);
+  }
+}
+
+@keyframes module-right-bottom {
+  0%,
+  100% {
+    transform: rotateY(-14deg) rotateX(10deg) translateY(0);
+  }
+
+  50% {
+    transform: rotateY(-14deg) rotateX(10deg) translateY(-12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .identity-scene,
+  .scene-glow,
+  .scene-module {
+    animation: none;
+  }
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.3fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-copy {
+  position: sticky;
+  top: 7rem;
+  margin-bottom: 0;
+}
+
+.mission-section-header {
+  max-width: 46rem;
+}
+
+.mission-flow {
+  position: relative;
+  display: grid;
+  gap: 4rem;
+  padding: 1rem 0 0;
+}
+
+.mission-line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(97, 165, 255, 0.5), rgba(0, 209, 255, 0.5), transparent);
+}
+
+.mission-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.mission-track::before {
+  content: '';
+  position: absolute;
+  top: 2.2rem;
+  left: 3.1rem;
+  width: calc(100% - 3.1rem);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(97, 165, 255, 0.35), transparent 85%);
+}
+
+.mission-track-vision {
+  grid-template-columns: minmax(0, 1fr) 7rem;
+}
+
+.mission-track-vision::before {
+  left: auto;
+  right: 3.1rem;
+  background: linear-gradient(270deg, rgba(0, 209, 255, 0.35), transparent 85%);
+}
+
+.mission-track-vision .mission-marker {
+  order: 2;
+}
+
+.mission-track-vision .mission-content {
+  text-align: right;
+  justify-self: end;
+}
+
+.mission-marker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mission-marker::before {
+  content: '';
+  position: absolute;
+  inset: -0.75rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 209, 255, 0.16), transparent 70%);
+  filter: blur(8px);
+}
+
+.mission-icon-wrap {
+  position: relative;
+  z-index: 1;
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(97, 165, 255, 0.18);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.24), transparent 35%),
+    linear-gradient(135deg, rgba(47, 128, 255, 0.24), rgba(0, 209, 255, 0.14));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 35px rgba(0, 0, 0, 0.24);
+}
+
+.mission-icon-wrap svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: #edf3ff;
+}
+
+.mission-content {
+  position: relative;
+  max-width: 38rem;
+  padding-top: 0.6rem;
+}
+
+.mission-content::before {
+  content: '';
+  position: absolute;
+  inset: -1.1rem -1.5rem auto 0;
+  height: calc(100% + 2.2rem);
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at top left, rgba(47, 128, 255, 0.12), transparent 42%);
+  pointer-events: none;
+}
+
+.mission-track-vision .mission-content::before {
+  inset: -1.1rem 0 auto -1.5rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at top right, rgba(0, 209, 255, 0.12), transparent 42%);
+}
+
+.mission-card-title {
+  position: relative;
+  z-index: 1;
+  margin: 0.65rem 0 0;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  line-height: 1;
+}
+
+.mission-card-copy {
+  position: relative;
+  z-index: 1;
+  margin: 1.5rem 0 0;
+  max-width: 36rem;
+}
+
+.mission-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.mission-track-vision .mission-tags {
+  justify-content: flex-end;
+}
+
+.mission-tags span {
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(97, 165, 255, 0.12);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--text-soft);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.team-card {
+  overflow: hidden;
+}
+
+.team-media {
+  min-height: 14rem;
+  padding: 1.4rem;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(145deg, rgba(47, 128, 255, 0.18), rgba(9, 18, 43, 0.3));
+}
+
+.team-avatar {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 1.25rem;
+  display: grid;
+  place-items: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #07101f;
+  background: linear-gradient(135deg, #f8fcff, #7edcff);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.team-body {
+  padding: 1.4rem;
+}
+
+.team-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.team-name {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.team-role {
+  margin: 0.45rem 0 0;
+  color: var(--cyan);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.team-description {
+  margin: 1rem 0 0;
+  color: var(--text-soft);
+}
+
+.linkedin-link {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(97, 165, 255, 0.22);
+  background: rgba(47, 128, 255, 0.08);
+  color: #d8ecff;
+  transition: 0.3s ease;
+}
+
+.linkedin-link svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+.linkedin-link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 209, 255, 0.45);
+  color: #00d1ff;
+  box-shadow: 0 10px 24px rgba(0, 209, 255, 0.16);
+}
+
+@media (max-width: 991px) {
+  .who-hero {
+    min-height: auto;
+  }
+
+  .who-hero-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-identity {
+    min-height: 30rem;
+  }
+
+  .identity-scene {
+    inset: 1rem 0 5.5rem;
+  }
+
+  .scene-floor {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .about-layout,
+  .team-grid,
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-copy {
+    position: static;
+  }
+
+  .mission-track,
+  .mission-track-vision {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .mission-track::before,
+  .mission-track-vision::before {
+    top: 2rem;
+    left: 0;
+    right: auto;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(97, 165, 255, 0.28), transparent 85%);
+  }
+
+  .mission-track-vision .mission-marker {
+    order: 0;
+  }
+
+  .mission-track-vision .mission-content {
+    text-align: left;
+    justify-self: start;
+  }
+
+  .mission-track-vision .mission-content::before {
+    inset: -1.1rem -1.5rem auto 0;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0)),
+      radial-gradient(circle at top left, rgba(0, 209, 255, 0.12), transparent 42%);
+  }
+
+  .mission-track-vision .mission-tags {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .who-hero {
+    padding-top: 3rem;
+  }
+
+  .hero-identity {
+    min-height: 34rem;
+  }
+
+  .scene-floor {
+    width: 14rem;
+    height: 14rem;
+    bottom: 6rem;
+  }
+
+  .scene-module {
+    width: 8.6rem;
+    padding: 0.75rem 0.8rem;
+  }
+
+  .scene-module strong {
+    font-size: 1rem;
+  }
+
+  .scene-module small {
+    font-size: 0.72rem;
+  }
+
+  .module-core {
+    width: 10.5rem;
+    top: 34%;
+  }
+
+  .module-connect {
+    top: 12%;
+  }
+
+  .module-cloud {
+    top: 18%;
+  }
+
+  .module-ai {
+    left: 0;
+    bottom: 24%;
+  }
+
+  .module-integration {
+    right: 0;
+    bottom: 18%;
+  }
+
+  .team-media,
+  .team-body {
+    padding: 1.1rem;
+  }
+
+  .team-meta {
+    align-items: center;
+  }
+
+  .mission-card-title {
+    font-size: 1.8rem;
+  }
+
+  .mission-icon-wrap {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .mission-content::before,
+  .mission-track-vision .mission-content::before {
+    inset: -0.8rem -0.8rem auto 0;
+  }
+
+  .identity-caption {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+}
